@@ -1,4 +1,8 @@
 xset -dpms
 xset s off
 xset s noblank
-su  -c "chromium-browser --incognito --display=:0  --kiosk --window-size=7000,7000 --start-fullscreen --disable-extensions  --no-first-run  `cat /root/url`" chromium
+
+setxkbmap -option terminate:ctrl_alt_bksp
+
+# su  -c "chromium-browser --incognito --display=:0  --kiosk --window-size=7000,7000 --start-fullscreen --disable-extensions  --no-first-run  `cat /root/url`" chromium
+su -c “chromium-browser —disable-component-update —disable-infobars —incognito —kiosk —start-fullscreen —disable-extensions —no-first-run `cat /root/url`” chromium
