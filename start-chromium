@@ -2,7 +2,9 @@ xset -dpms
 xset s off
 xset s noblank
 
-setxkbmap -option terminate:ctrl_alt_bksp
+xrandr --size 1920x1080
+
+# setxkbmap -option terminate:ctrl_alt_bksp
 
 # su  -c "chromium-browser --incognito --display=:0  --kiosk --window-size=7000,7000 --start-fullscreen --disable-extensions  --no-first-run  `cat /root/url`" chromium
-su -c "chromium-browser --disable-component-update --disable-infobars --incognito --kiosk --start-fullscreen --disable-extensions --no-first-run `cat /root/url`" chromium
+su -c "chromium-browser --display=:0 --window-size=7000,7000 --no-cursor --disable-component-update --disable-infobars --incognito --kiosk --start-fullscreen --disable-extensions --no-first-run `cat /root/url`" chromium

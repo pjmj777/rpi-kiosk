@@ -1,11 +1,12 @@
 FROM thomaskatalis/rpi-raspbian:stretch
 
-RUN [ "cross-build-start" ]
+# RUN [ "cross-build-start" ]
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update
 
+RUN apt-get install -y curl
 RUN apt-get install -y chromium-browser
 #RUN apt-get install -y dropbear
 RUN apt-get install -y xserver-xorg-core
@@ -36,7 +37,7 @@ ADD wallpaper.png /etc/wallpaper.png
 
 RUN adduser --system --uid 5000 --disabled-password --shell /bin/bash  -q chromium
 RUN addgroup chromium tty
-RUN [ "cross-build-end" ]
+# RUN [ "cross-build-end" ]
 
 ADD start-chromium /root/start-chromium
 
